@@ -8,7 +8,8 @@ class ListsController < ApplicationController
     if @list.save
        redirect_to list_path(@list.id)
     else
-       render :index
+      @lists = List.all
+      render :index
     end
   end
     
